@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
     >
       {/* Background Image with Parallax */}
       <motion.div style={{ y: y1 }} className="absolute inset-0 z-0">
@@ -54,7 +54,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 leading-tight uppercase tracking-tighter text-balance">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight uppercase tracking-tighter text-balance">
             Красиви и функционални
             <span className="block text-gradient mt-2">опънати тавани</span>
           </h1>
