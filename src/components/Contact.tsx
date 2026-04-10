@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Phone, CheckCircle, ArrowRight, Send } from "lucide-react";
 import { motion } from "framer-motion";
+import { siteConfig } from "@/config/site";
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState<"idle" | "success">("idle");
@@ -27,10 +28,7 @@ export default function Contact() {
             className="lg:w-1/3"
           >
             <h2 className="text-4xl md:text-6xl font-black text-primary-900 dark:text-white mb-8 uppercase tracking-tighter">
-              Свържете се{" "}
-              <span className="text-gradient">
-                с нас
-              </span>
+              Свържете се <span className="text-gradient">с нас</span>
             </h2>
             <p className="text-xl text-primary-700 dark:text-primary-200 mb-12 font-medium">
               Имате въпроси или искате безплатна оферта? Нашият екип е на ваше
@@ -39,15 +37,26 @@ export default function Contact() {
 
             <div className="space-y-10">
               {[
-                { icon: Phone, label: "Телефон", value: "+359 888 000 000" },
-                { icon: Mail, label: "Имейл", value: "office@blagost.bg" },
+                {
+                  icon: Phone,
+                  label: "Телефон",
+                  value: siteConfig.phone,
+                },
+                {
+                  icon: Mail,
+                  label: "Имейл",
+                  value: siteConfig.email,
+                },
                 {
                   icon: MapPin,
                   label: "Адрес",
-                  value: "гр. София, бул. Витоша 100",
+                  value: siteConfig.address,
                 },
               ].map((item, i) => (
-                <div key={i} className="flex items-start space-x-6 group cursor-pointer">
+                <div
+                  key={i}
+                  className="flex items-start space-x-6 group cursor-pointer"
+                >
                   <div className="w-14 h-14 bg-primary-50 dark:bg-primary-900 rounded-[1.2rem] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg border border-primary-100 dark:border-primary-800">
                     <item.icon className="w-7 h-7 text-primary-900 dark:text-white" />
                   </div>

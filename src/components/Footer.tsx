@@ -2,6 +2,7 @@
 
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import { siteConfig } from "@/config/site";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -33,7 +34,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-black tracking-tighter uppercase leading-none">
-                  Благост
+                  {siteConfig.name}
                 </span>
                 <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-primary-50 mt-1">
                   Строителна компания
@@ -41,7 +42,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-primary-400 leading-relaxed font-medium">
-              Вашият доверен партньор в изработката и монтажа на модерни опънати
+              Вашият доверен партньор в изработката и монтажа de модерни опънати
               тавани. Качество, стил и професионализъм във всеки детайл.
             </p>
             <div className="flex items-center space-x-4">
@@ -123,7 +124,7 @@ export default function Footer() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <span className="text-primary-300 font-bold text-sm leading-relaxed group-hover:text-white transition-colors">
-                  гр. София, бул. Витоша 100
+                  {siteConfig.address}
                 </span>
               </li>
               <li className="flex items-center space-x-4 group cursor-pointer">
@@ -131,7 +132,7 @@ export default function Footer() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <span className="text-primary-300 font-bold text-sm group-hover:text-white transition-colors">
-                  +359 888 000 000
+                  {siteConfig.phone}
                 </span>
               </li>
               <li className="flex items-center space-x-4 group cursor-pointer">
@@ -139,7 +140,7 @@ export default function Footer() {
                   <Mail className="w-5 h-5" />
                 </div>
                 <span className="text-primary-300 font-bold text-sm group-hover:text-white transition-colors">
-                  office@blagost.bg
+                  {siteConfig.email}
                 </span>
               </li>
             </ul>

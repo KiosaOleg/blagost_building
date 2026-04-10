@@ -14,6 +14,7 @@ import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { siteConfig } from "@/config/site";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -94,7 +95,7 @@ export default function Header() {
                     : "text-white"
                 }`}
               >
-                Благост
+                {siteConfig.name}
               </span>
               <span
                 className={`text-[10px] font-medium tracking-[0.2em] uppercase mt-1 leading-none ${
@@ -183,7 +184,7 @@ export default function Header() {
             </button>
 
             <a
-              href="tel:+359888000000"
+              href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
               className={`hidden md:flex items-center space-x-2 px-4 py-2 rounded-full font-bold transition-all cursor-pointer hover:scale-105 active:scale-95 ${
                 !isTransparent
                   ? "bg-primary-900 dark:bg-white text-white dark:text-primary-900"
@@ -191,7 +192,7 @@ export default function Header() {
               }`}
             >
               <Phone size={18} />
-              <span>+359 888 000 000</span>
+              <span>{siteConfig.phone}</span>
             </a>
 
             {/* Mobile Menu Button */}
