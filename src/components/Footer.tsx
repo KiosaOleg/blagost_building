@@ -2,6 +2,7 @@
 
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
 export default function Footer() {
@@ -17,20 +18,13 @@ export default function Footer() {
               href="/"
               className="flex items-center space-x-3 group cursor-pointer interactive-element"
             >
-              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg transition-transform group-hover:rotate-6">
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-8 h-8 text-primary-950"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M3 21h18" />
-                  <path d="M5 21V7l8-4v18" />
-                  <path d="M13 21V11l5 3v7" />
-                </svg>
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg transition-transform group-hover:rotate-6 overflow-hidden relative">
+                <Image
+                  src="/images/favicon.png"
+                  alt="Благост"
+                  fill
+                  className="object-cover invert"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-black tracking-tighter uppercase leading-none">

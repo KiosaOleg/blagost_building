@@ -14,6 +14,7 @@ import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
 export default function Header() {
@@ -67,29 +68,19 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center space-x-3 group cursor-pointer interactive-element"
+            className="flex items-center space-x-3 group cursor-pointer interactive-element flex-shrink-0"
           >
-            <div className="relative w-12 h-12 bg-primary-900 dark:bg-white rounded-xl flex items-center justify-center shadow-lg transition-transform group-hover:scale-105">
-              <svg
-                viewBox="0 0 24 24"
-                className="w-8 h-8 text-white dark:text-primary-900"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M3 21h18" />
-                <path d="M5 21V7l8-4v18" />
-                <path d="M13 21V11l5 3v7" />
-                <path d="M7 10h2" />
-                <path d="M7 14h2" />
-                <path d="M7 18h2" />
-              </svg>
+            <div className="relative w-12 h-12 bg-primary-900 dark:bg-white rounded-xl flex items-center justify-center shadow-lg transition-transform group-hover:scale-105 overflow-hidden">
+              <Image
+                src="/images/favicon.png"
+                alt="Благост"
+                fill
+                className="object-cover"
+              />
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col min-w-0">
               <span
-                className={`text-2xl font-bold tracking-tight leading-none ${
+                className={`text-2xl font-bold tracking-tight leading-none truncate ${
                   !isTransparent
                     ? "text-primary-900 dark:text-white"
                     : "text-white"
@@ -98,7 +89,7 @@ export default function Header() {
                 {siteConfig.name}
               </span>
               <span
-                className={`text-[10px] font-medium tracking-[0.2em] uppercase mt-1 leading-none ${
+                className={`text-[10px] font-medium tracking-[0.2em] uppercase mt-1 leading-none truncate ${
                   !isTransparent
                     ? "text-primary-600 dark:text-primary-400"
                     : "text-primary-300"
@@ -110,7 +101,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6">
+          <nav className="hidden xl:flex items-center space-x-4 xl:space-x-6 flex-shrink-0">
             {navItems.map((item) => (
               <div
                 key={item.name}
@@ -120,7 +111,7 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className={`flex items-center space-x-1 text-sm font-bold uppercase tracking-widest transition-colors hover:text-primary-500 dark:hover:text-primary-400 cursor-pointer ${
+                  className={`flex items-center space-x-1 text-xs lg:text-sm font-bold uppercase tracking-wider lg:tracking-widest transition-colors hover:text-primary-500 dark:hover:text-primary-400 cursor-pointer whitespace-nowrap ${
                     !isTransparent
                       ? "text-primary-900 dark:text-white"
                       : "text-white"
@@ -129,8 +120,8 @@ export default function Header() {
                   <span>{item.name}</span>
                   {item.dropdown && (
                     <ChevronDown
-                      size={14}
-                      className={`transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`}
+                      size={8}
+                      className={`lg:size-10 transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`}
                     />
                   )}
                 </Link>
@@ -162,10 +153,10 @@ export default function Header() {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 flex-shrink-0">
             <Link
               href="/calculator"
-              className="hidden xl:flex items-center space-x-2 bg-[#4ade80] hover:bg-[#22c55e] text-white font-black py-2.5 px-6 rounded-lg transition-all shadow-lg uppercase tracking-widest text-sm cursor-pointer hover:scale-105 active:scale-95"
+              className="hidden lg:flex items-center space-x-2 bg-[#4ade80] hover:bg-[#22c55e] text-white font-black py-2.5 px-6 rounded-lg transition-all shadow-lg uppercase tracking-widest text-sm cursor-pointer hover:scale-105 active:scale-95"
             >
               <Calculator size={18} />
               <span>Калкулатор</span>
@@ -185,7 +176,7 @@ export default function Header() {
 
             <a
               href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-              className={`hidden md:flex items-center space-x-2 px-4 py-2 rounded-full font-bold transition-all cursor-pointer hover:scale-105 active:scale-95 ${
+              className={`hidden lg:flex items-center space-x-2 px-4 py-2 rounded-full font-bold transition-all cursor-pointer hover:scale-105 active:scale-95 whitespace-nowrap ${
                 !isTransparent
                   ? "bg-primary-900 dark:bg-white text-white dark:text-primary-900"
                   : "bg-white text-primary-900 hover:bg-primary-100"
@@ -198,7 +189,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`lg:hidden p-2 rounded-lg cursor-pointer ${
+              className={`xl:hidden p-2 rounded-lg cursor-pointer ${
                 !isTransparent
                   ? "text-primary-900 dark:text-white"
                   : "text-white"
@@ -217,23 +208,21 @@ export default function Header() {
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            className="lg:hidden fixed inset-0 top-0 left-0 w-full h-screen bg-white dark:bg-primary-950 z-[60] overflow-y-auto"
+            className="xl:hidden fixed inset-0 top-0 left-0 w-full h-screen bg-white dark:bg-primary-950 z-[60] overflow-y-auto"
           >
             <div className="p-6 flex justify-between items-center border-b dark:border-primary-900">
               <Link
                 href="/"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center space-x-3"
+                className="flex items-center space-x-3 flex-shrink-0"
               >
-                <div className="w-10 h-10 bg-primary-900 dark:bg-white rounded-lg flex items-center justify-center">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="w-6 h-6 text-white dark:text-primary-900"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path d="M3 21h18M5 21V7l8-4v18M13 21V11l5 3v7M7 10h2M7 14h2M7 18h2" />
-                  </svg>
+                <div className="w-10 h-10 bg-primary-900 dark:bg-white rounded-lg flex items-center justify-center overflow-hidden relative flex-shrink-0">
+                  <Image
+                    src="/images/favicon.png"
+                    alt="Благост"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <span className="text-2xl font-black text-primary-900 dark:text-white uppercase tracking-tighter">
                   Благост

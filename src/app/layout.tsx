@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: "Благост - Опънати тавани София",
   description:
     "Красиви и функционални опънати тавани за вашия дом и офис в София и цялата страна. Домовете започват с нас.",
+  icons: {
+    icon: "/images/favicon.png",
+    apple: "/images/favicon.png",
+  },
 };
 
 export default function RootLayout({
