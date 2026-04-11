@@ -18,99 +18,208 @@ export default function Materials() {
   const [selectedItem, setSelectedItem] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState("Всички");
 
-  const categories = ["Всички", "Профили", "Осветление", "Аксесоари"];
+  const categories = [
+    "Всички",
+    "Профили",
+    "Осветление",
+    "Аксесоари",
+    "Курнези",
+  ];
 
   const items = [
     {
       id: 1,
-      category: "Осветление",
-      title: "TRL01-1/TRL01-2 Трекови светлини",
+      category: "Профили",
+      title: "Стенен перфориран профил 01-3",
       description:
-        "Релсова светлина за монтаж на релсови системи. Степен на защита IP20, цокъл GU10 до 35W. Цветове: черно моаре и бяло моаре.",
-      price: "По запитване",
-      image:
-        "https://images.unsplash.com/photo-1565814636199-ae8133055c1c?auto=format&fit=crop&q=80&w=400",
-      features: ["GU10 цокъл", "35W макс", "IP20 защита", "Черно/Бяло моаре"],
+        "PVC профил за опънати тавани осигурява лесен монтаж и демонтаж. Гъвкав, удобен за рязане, пробиване и не цапа стените.",
+      price: "1,5€/м",
+      image: "/images/01-03_1-Стенен перфориран профил.jpg",
+      features: ["PVC материал", "Лесен монтаж", "Гъвкав", "Не цапа стените"],
     },
     {
       id: 2,
-      category: "Осветление",
-      title: "TRL01-3/TRL01-4 Акцентно осветление",
+      category: "Профили",
+      title: "Разделящ алуминиев профил 03-2 подсилен",
       description:
-        "Стилна релсова светлина за акцент в интериора. Интегрира се най-лесно с профил 07-2. Цокъл GX53 за LED лампи до 15W.",
+        "Подсилен алуминиев профил за разделяне на нива в опънати тавани. Осигурява здравина и стабилност на конструкцията.",
       price: "По запитване",
-      image:
-        "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&q=80&w=400",
+      image: "/images/03-2 Разделящ алуминиев профил - подсилен.jpg",
       features: [
-        "GX53 цокъл",
-        "15W LED",
-        "Минималистичен дизайн",
-        "Лесна интеграция",
+        "Алуминиева сплав",
+        "Подсилен дизайн",
+        "За две нива",
+        "Висока здравина",
       ],
     },
     {
       id: 3,
       category: "Профили",
-      title: "Профил 07-2 за вграждане",
+      title: "Профил за тавани на две нива 05-06",
       description:
-        "Специализиран алуминиев профил за монтаж на релсови системи в опънати тавани. Осигурява перфектен завършек и здравина.",
+        "Специализиран профил за инсталиране на тавани на две нива с интегрирано осветление за модерен интериор.",
       price: "По запитване",
       image:
-        "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=400",
+        "/images/05-06_1Профил за инсталиране на тавани на две нива с осветление.jpg",
       features: [
-        "Алуминиева сплав",
+        "За две нива",
+        "С осветление",
+        "Модерен дизайн",
         "Лесен монтаж",
-        "Издръжливост",
-        "Перфектен финиш",
       ],
     },
     {
       id: 4,
       category: "Профили",
-      title: "Скрит профил за корниз",
+      title: "Алуминиев профил за подсветка 06-06",
       description:
-        "Иновативно решение за скриване на корнизи в опънати тавани. Създава ефект на свободно падащи завеси от тавана.",
+        "Алуминиев профил за подсветка по периметъра на опънатия таван. Идеален за контурно осветление.",
       price: "По запитване",
-      image:
-        "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=400",
-      features: [
-        "Скрит монтаж",
-        "Модерен изглед",
-        "Универсален",
-        "Здрава фиксация",
-      ],
+      image: "/images/06-06_11Алуминиев профил за подсветка по периметъра.jpg",
+      features: ["За периметър", "Алуминиев", "За LED ленти", "Тънък профил"],
     },
     {
       id: 5,
-      category: "Аксесоари",
-      title: "LED лента 24V Premium",
+      category: "Профили",
+      title: "Профил за висящи тавани D12 06-18",
       description:
-        "Висококачествена LED лента за контурно осветление и светещи тавани. Висок индекс на цветопредаване (CRI > 90).",
+        "Алуминиев профил за висящи тавани с екран D12 (13мм). Осигурява елегантен завършек на висящите конструкции.",
       price: "По запитване",
       image:
-        "https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&q=80&w=400",
+        "/images/06-18_11Алуминиев профил за висящи тавани с екран D12 (13мм).jpg",
       features: [
-        "24V захранване",
-        "CRI > 90",
-        "Дълъг живот",
-        "Равномерна светлина",
+        "Екран D12",
+        "13мм дебелина",
+        "За висящи тавани",
+        "Елегантен дизайн",
       ],
     },
     {
       id: 6,
-      category: "Аксесоари",
-      title: "Захранващи блокове Mean Well",
+      category: "Профили",
+      title: "Сенчест профил 8мм",
       description:
-        "Надеждни захранвания за вашето LED осветление. Защита от претоварване, късо съединение и пренапрежение.",
+        "Тънък сенчест профил за създаване на дискретни преходи между нивата на опънатия таван.",
+      price: "По запитване",
+      image: "/images/Сенчест профил 8мм.jpg",
+      features: ["8мм дебелина", "Сенчест дизайн", "Дискретен", "Лесен монтаж"],
+    },
+    {
+      id: 7,
+      category: "Осветление",
+      title: "Светеща линия D33 06-19",
+      description:
+        "Светеща линия D33 (35 мм) за създаване на впечатляващи светлинни ефекти в опънатите тавани.",
+      price: "По запитване",
+      image: "/images/06-19_Deep_1Светеща линия D33 (35 мм).jpg",
+      features: [
+        "35 мм ширина",
+        "Светеща линия",
+        "За ефекти",
+        "LED технология",
+      ],
+    },
+    {
+      id: 8,
+      category: "Осветление",
+      title: "Еднофазна шина TRK01-1/TRK01-2",
+      description:
+        "Еднофазна шина за монтаж на релсови системи за осветление. Позволява гъвкаво позициониране на светлините.",
+      price: "По запитване",
+      image: "/images/TRK01-1-TRK01-2-Еднофазна-шина.webp",
+      features: ["Еднофазна", "Релсова система", "Гъвкав монтаж", "GU10/GX53"],
+    },
+    {
+      id: 9,
+      category: "Осветление",
+      title: "Съединител IC01-1/IC01-2",
+      description:
+        "Съединител за еднофазна релса за свързване на секции от релсовата осветителна система.",
       price: "По запитване",
       image:
-        "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&q=80&w=400",
-      features: [
-        "Mean Well марка",
-        "Висока ефективност",
-        "Сертифицирани",
-        "Гаранция",
-      ],
+        "/images/IC01-1-IC01-2-Съединител-за-еднофазна-релса-1024x766.webp",
+      features: ["За релси", "Свързване", "Еднофазна", "Здрав"],
+    },
+    {
+      id: 10,
+      category: "Осветление",
+      title: "Съединител IC01-3/IC01-4",
+      description:
+        "Съединител за еднофазна релса с ъглова конфигурация за комплексни осветителни инсталации.",
+      price: "По запитване",
+      image: "/images/IC01-3-IC01-4-Съединител-за-еднофазна-релса.webp",
+      features: ["Ъглов", "За релси", "Еднофазна", "Комплексен монтаж"],
+    },
+    {
+      id: 11,
+      category: "Осветление",
+      title: "Съединител IC01-5/IC01-6",
+      description:
+        "Съединител за еднофазна релса с T-образна конфигурация за разклоняване на осветителни линии.",
+      price: "По запитване",
+      image: "/images/IC01-5-IC01-6-Съединител-за-еднофазна-релса.webp",
+      features: ["T-образен", "Разклоняване", "За релси", "Еднофазна"],
+    },
+    {
+      id: 12,
+      category: "Осветление",
+      title: "Съединител IC01-7/IC01-8",
+      description:
+        "Съединител за еднофазна релса с кръгова конфигурация за затворени осветителни контури.",
+      price: "По запитване",
+      image:
+        "/images/IC01-7-IC01-8-Съединител-за-еднофазна-релса-1024x766.webp",
+      features: ["Кръгов", "За контури", "За релси", "Еднофазна"],
+    },
+    {
+      id: 13,
+      category: "Аксесоари",
+      title: "Магнитен адаптор 07-05",
+      description:
+        "Магнитен адаптор за лесен монтаж и демонтаж на осветителни елементи в опънати тавани.",
+      price: "По запитване",
+      image: "/images/07-05_107-5 Магнитен адаптор.jpg",
+      features: ["Магнитен", "Бърз монтаж", "Лесен демонтаж", "Универсален"],
+    },
+    {
+      id: 14,
+      category: "Аксесоари",
+      title: "Алуминиева лента brusbox 40x40мм",
+      description:
+        "Алуминиева лента за укрепване и довършване на конструкцията на опънатия таван.",
+      price: "По запитване",
+      image: "/images/08-1-Алуминиева-лента-brusbox-40x40мм.webp",
+      features: ["40x40мм", "Алуминиева", "За укрепване", "Универсална"],
+    },
+    {
+      id: 15,
+      category: "Аксесоари",
+      title: "Магнитна шина TRM01",
+      description:
+        "Магнитна шина за бърз и лесен монтаж на осветителни елементи без инструменти.",
+      price: "По запитване",
+      image: "/images/TRM01-Магнитна-шина.webp",
+      features: ["Магнитна", "Без инструменти", "Бърз монтаж", "Универсална"],
+    },
+    {
+      id: 16,
+      category: "Курнези",
+      title: "L-образен курниз за пердета 09-11",
+      description:
+        "L-образен плосък курниз за завеси и пердета, който се монтира дискретно в опънатия таван.",
+      price: "По запитване",
+      image: "/images/09-11-L-образен-курниз-за-пердета-плосък-1024x767.webp",
+      features: ["L-образен", "Плосък", "За пердета", "Дискретен"],
+    },
+    {
+      id: 17,
+      category: "Курнези",
+      title: "Двоен курниз за две пердета PK-15",
+      description:
+        "Двоен курниз за монтаж на две завеси или пердета едновременно с едно решение.",
+      price: "По запитване",
+      image: "/images/PK-15-Двоен-курниз-за-две-пердета-1024x767.webp",
+      features: ["Двоен", "За две пердета", "Едно решение", "Компактен"],
     },
   ];
 
@@ -120,7 +229,10 @@ export default function Materials() {
       : items.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="materials" className="py-24 bg-white dark:bg-primary-950 text-primary-900 dark:text-white relative overflow-hidden transition-colors duration-300">
+    <section
+      id="materials"
+      className="py-24 bg-white dark:bg-primary-950 text-primary-900 dark:text-white relative overflow-hidden transition-colors duration-300"
+    >
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary-100 dark:bg-primary-900/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary-50 dark:bg-primary-800/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 opacity-50"></div>
@@ -142,7 +254,8 @@ export default function Materials() {
             Всичко за вашия <span className="text-gradient">таван</span>
           </h2>
           <p className="text-xl text-primary-700 dark:text-primary-200 max-w-3xl mx-auto font-medium">
-            Предлагаме пълна гама от висококачествени профили, осветителни тела и аксесоари за професионален монтаж.
+            Предлагаме пълна гама от висококачествени профили, осветителни тела
+            и аксесоари за професионален монтаж.
           </p>
         </motion.div>
 
@@ -197,7 +310,9 @@ export default function Materials() {
                     {item.description}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-xl font-black text-primary-900 dark:text-white uppercase tracking-tighter">{item.price}</span>
+                    <span className="text-xl font-black text-primary-900 dark:text-white uppercase tracking-tighter">
+                      {item.price}
+                    </span>
                     <div className="w-12 h-12 bg-primary-900 dark:bg-white text-white dark:text-primary-900 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                       <ArrowRight className="w-6 h-6" />
                     </div>
@@ -262,7 +377,9 @@ export default function Materials() {
                           <Zap className="w-4 h-4" />
                           <span>{item.category}</span>
                         </div>
-                        <h3 className="text-4xl font-black mb-8 uppercase tracking-tighter leading-none text-primary-900 dark:text-white">{item.title}</h3>
+                        <h3 className="text-4xl font-black mb-8 uppercase tracking-tighter leading-none text-primary-900 dark:text-white">
+                          {item.title}
+                        </h3>
                         <p className="text-primary-600 dark:text-primary-200 text-lg leading-relaxed mb-10 font-medium">
                           {item.description}
                         </p>
